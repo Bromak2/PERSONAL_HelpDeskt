@@ -17,9 +17,10 @@ function guardaryeditar(e){
         processData: false,
         success: function(datos){
             console.log(datos);
-           $('#usuario_form')[0].reset();
-           $("#modalmantenimiento").modal('hide');
-           $('#usuario_data').DataTable().ajax.reload();
+
+            $('#usuario_form')[0].reset();
+            $("#modalmantenimiento").modal('hide');
+            $('#usuario_data').DataTable().ajax.reload();
 
            swal({
             title: "Correcto",
@@ -89,7 +90,7 @@ tabla=$('#usuario_data').dataTable({
 function editar(usu_id){
     $('#mldtitulo').html('Editar Registro');
 
-    $.post("../../controller/usuario.php?op=mostrar", {usu_id : usu_id}, function (data) {
+    $.post("../../controller/usuario.php?op=mostrar", {usu_id : usu_id}, function(data){
         data = JSON.parse(data);
         $('#usu_id').val(data.usu_id);
         $('#usu_nom').val(data.usu_nom);

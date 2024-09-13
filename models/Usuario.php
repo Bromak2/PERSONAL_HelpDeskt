@@ -58,12 +58,12 @@
                 WHERE
                 usu_id = ?";
             $sql=$conectar->prepare($sql);
-            $sql->bindvalue(1,$usu_id);
-            $sql->bindvalue(2,$usu_nom);
-            $sql->bindvalue(3,$usu_ape);
-            $sql->bindvalue(4,$usu_correo);
-            $sql->bindvalue(5,$usu_pass);
-            $sql->bindvalue(6,$rol_id);
+            $sql->bindvalue(1,$usu_nom);
+            $sql->bindvalue(2,$usu_ape);
+            $sql->bindvalue(3,$usu_correo);
+            $sql->bindvalue(4,$usu_pass);
+            $sql->bindvalue(5,$rol_id);
+            $sql->bindvalue(6,$usu_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
